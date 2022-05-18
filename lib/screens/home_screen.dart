@@ -1,9 +1,9 @@
 import 'package:corebornassessmenttask/models/post_model.dart';
 import 'package:corebornassessmenttask/providers/main_provider.dart';
 import 'package:corebornassessmenttask/utils/project_utils.dart';
+import 'package:corebornassessmenttask/widgets/post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -119,34 +119,17 @@ class _HomeScreenState extends State<HomeScreen> {
             ? ProjectUtils.circularProgressBar(context)
             : Stack(
                 children: [
-                  ListView.separated(
+                  ListView.builder(
                     controller: _scrollController,
                     itemCount: posts.length,
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ListTile(
-                          title: Text(
-                            posts[index].title,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                          subtitle: Text(
-                            posts[index].body,
-                            style: TextStyle(
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ),
+                      return PostWidget(
+                        post: posts[index],
+                        onPress: () {
+                          // TODO : REDIRECT TO POST PAGE
+                          //Navigator.push(context, MaterialPageRoute(builder: (context) => const PostPage());
+                        },
                       );
-                    },
-                    separatorBuilder: (context, index) {
-                      if (index == posts.length - 1) {
-                        return Container();
-                      } else {
-                        return const Divider(height: 1);
-                      }
                     },
                   ),
                   if (loading)

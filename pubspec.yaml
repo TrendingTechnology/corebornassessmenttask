@@ -55,3 +55,4 @@ flutter:
   assets:
     - assets/images/empty_state.svg
     - assets/images/empty_state2.svg
+    - assets/icons/
