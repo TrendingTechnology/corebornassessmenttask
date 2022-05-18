@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           colorScheme: ThemeData().colorScheme.copyWith(primary: const Color(0xFF07122A), brightness: Brightness.light),
-          scaffoldBackgroundColor: Colors.white,
-          backgroundColor: const Color(0xFFF5F5F7),
+          backgroundColor: Colors.white,
+          scaffoldBackgroundColor: const Color(0xFFF5F5F7),
           useMaterial3: false,
           fontFamily: 'Poppins',
           textTheme: const TextTheme(),
