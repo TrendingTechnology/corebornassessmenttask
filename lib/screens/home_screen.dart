@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
         });
         return;
       } else {
-        sourcePosts = context.read<MainProvider>().posts;
+        if (mounted) sourcePosts = context.read<MainProvider>().posts;
       }
     }
     if (posts.length == sourcePosts.length) {
@@ -92,6 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Assessment App'),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
           centerTitle: false,
           actions: [
             ElevatedButton.icon(

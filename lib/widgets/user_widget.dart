@@ -16,7 +16,7 @@ class _UserWidgetState extends State<UserWidget> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 8.0),
       child: Material(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).colorScheme.background.withOpacity(0.2),
         borderRadius: const BorderRadius.all(Radius.circular(16.0)),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

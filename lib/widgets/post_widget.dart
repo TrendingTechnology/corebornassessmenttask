@@ -22,7 +22,7 @@ class _PostWidgetState extends State<PostWidget> {
       child: Card(
         elevation: 0,
         shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(16.0))),
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).colorScheme.background.withOpacity(0.2),
         child: InkWell(
           onTap: widget.onPress,
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
@@ -73,19 +73,31 @@ class _PostWidgetState extends State<PostWidget> {
                                 }
                               });
                             },
-                            icon: SvgPicture.asset('assets/icons/like.svg'),
+                            icon: SvgPicture.asset(
+                              'assets/icons/like.svg',
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset('assets/icons/comment.svg'),
+                            icon: SvgPicture.asset(
+                              'assets/icons/comment.svg',
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset('assets/icons/share.svg'),
+                            icon: SvgPicture.asset(
+                              'assets/icons/share.svg',
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: SvgPicture.asset('assets/icons/retweet.svg'),
+                            icon: SvgPicture.asset(
+                              'assets/icons/retweet.svg',
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                         ],
                       ),

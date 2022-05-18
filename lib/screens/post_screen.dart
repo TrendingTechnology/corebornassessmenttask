@@ -54,7 +54,7 @@ class _PostScreenState extends State<PostScreen> {
         });
         return;
       } else {
-        sourceComments = context.read<MainProvider>().postComments;
+        if (mounted) sourceComments = context.read<MainProvider>().postComments;
       }
     }
 
@@ -97,6 +97,8 @@ class _PostScreenState extends State<PostScreen> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
           centerTitle: false,
           title: const Text('Post'),
         ),
@@ -141,19 +143,31 @@ class _PostScreenState extends State<PostScreen> {
                         }
                       });
                     },
-                    icon: SvgPicture.asset('assets/icons/like.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/icons/like.svg',
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: SvgPicture.asset('assets/icons/comment.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/icons/comment.svg',
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: SvgPicture.asset('assets/icons/share.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/icons/share.svg',
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: SvgPicture.asset('assets/icons/retweet.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/icons/retweet.svg',
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
                 ],
               ),

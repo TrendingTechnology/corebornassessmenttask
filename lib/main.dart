@@ -27,6 +27,20 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         title: 'Assessment Task',
+        themeMode: ThemeMode.system,
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          colorScheme: ThemeData().colorScheme.copyWith(
+                primary: const Color(0xFF87CEFA),
+                onPrimary: Colors.black,
+                brightness: Brightness.dark,
+              ),
+          backgroundColor: Colors.black.withOpacity(0.7),
+          scaffoldBackgroundColor: Colors.black,
+          useMaterial3: false,
+          fontFamily: 'Poppins',
+          textTheme: const TextTheme(),
+        ),
         theme: ThemeData(
           brightness: Brightness.light,
           colorScheme: ThemeData().colorScheme.copyWith(primary: const Color(0xFF07122A), brightness: Brightness.light),

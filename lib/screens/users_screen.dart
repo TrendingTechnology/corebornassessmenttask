@@ -50,7 +50,7 @@ class _UsersScreenState extends State<UsersScreen> {
         });
         return;
       } else {
-        sourceUsers = context.read<MainProvider>().users;
+        if (mounted) sourceUsers = context.read<MainProvider>().users;
       }
     }
 
@@ -92,6 +92,8 @@ class _UsersScreenState extends State<UsersScreen> {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: true,
+          backgroundColor: Theme.of(context).colorScheme.primary,
+          foregroundColor: Theme.of(context).colorScheme.onPrimary,
           title: const Text('Users'),
           centerTitle: false,
         ),
