@@ -14,7 +14,7 @@ class CommentModel {
   });
 
   CommentModel.fromJson(Map<String, dynamic> json)
-      : userId = json['userId'] as int,
+      : userId = json['postId'] as int,
         id = json['id'] as int,
         name = json['name'] as String,
         email = json['email'] as String,
