@@ -1,6 +1,7 @@
 import 'package:corebornassessmenttask/models/post_model.dart';
 import 'package:corebornassessmenttask/providers/main_provider.dart';
 import 'package:corebornassessmenttask/screens/post_screen.dart';
+import 'package:corebornassessmenttask/screens/users_screen.dart';
 import 'package:corebornassessmenttask/utils/project_utils.dart';
 import 'package:corebornassessmenttask/widgets/post_widget.dart';
 import 'package:flutter/material.dart';
@@ -95,8 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             ElevatedButton.icon(
               onPressed: () {
-                // TODO : REDIRECT TO USERS PAGE
-                //Navigator.push(context, MaterialPageRoute(builder: (context) => const UsersScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const UsersScreen()));
               },
               icon: Icon(
                 Icons.contacts_sharp,

@@ -7,6 +7,8 @@ class UserModel {
   String phone;
   String website;
   Company company;
+  int albumCount;
+  int postCount;
 
   UserModel({
     required this.id,
@@ -17,9 +19,11 @@ class UserModel {
     required this.phone,
     required this.website,
     required this.company,
+    required this.albumCount,
+    required this.postCount,
   });
 
-  UserModel.fromJson(Map<String, dynamic> json)
+  UserModel.fromJson(Map<String, dynamic> json, this.albumCount, this.postCount)
       : id = json['id'] as int,
         name = json['name'] as String,
         username = json['username'] as String,

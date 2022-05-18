@@ -67,7 +67,31 @@ class MainProvider with ChangeNotifier {
       users = [];
       var json = jsonDecode(response.body);
       for (var element in json) {
-        UserModel user = UserModel.fromJson(element);
+        if (posts.isEmpty) {
+          String response = await getPosts();
+          if (response != '0') {
+            return response;
+          }
+        }
+        if (allAlbums.isEmpty) {
+          String response = await getAlbums();
+          if (response != '0') {
+            return response;
+          }
+        }
+        int postCount = 0;
+        for (var post in posts) {
+          if (post.userId == element['id']) {
+            postCount++;
+          }
+        }
+        int albumCount = 0;
+        for (var album in allAlbums) {
+          if (album.userId == element['id']) {
+            albumCount++;
+          }
+        }
+        UserModel user = UserModel.fromJson(element, albumCount, postCount);
         users.add(user);
       }
       notifyListeners();
