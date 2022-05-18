@@ -25,7 +25,6 @@ class MainProvider with ChangeNotifier {
       notifyListeners();
       return '0';
     } catch (e) {
-      print('Exception while getting posts: $e');
       return e.toString();
     }
   }
@@ -42,7 +41,6 @@ class MainProvider with ChangeNotifier {
       notifyListeners();
       return '0';
     } catch (e) {
-      print('Exception while getting comments for post $postId: $e');
       return e.toString();
     }
   }
@@ -59,7 +57,6 @@ class MainProvider with ChangeNotifier {
       notifyListeners();
       return '0';
     } catch (e) {
-      print('Exception while getting albums: $e');
       return e.toString();
     }
   }
@@ -76,7 +73,6 @@ class MainProvider with ChangeNotifier {
       notifyListeners();
       return '0';
     } catch (e) {
-      print('Exception while getting users: $e');
       return e.toString();
     }
   }

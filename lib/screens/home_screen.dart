@@ -1,5 +1,6 @@
 import 'package:corebornassessmenttask/models/post_model.dart';
 import 'package:corebornassessmenttask/providers/main_provider.dart';
+import 'package:corebornassessmenttask/screens/post_screen.dart';
 import 'package:corebornassessmenttask/utils/project_utils.dart';
 import 'package:corebornassessmenttask/widgets/post_widget.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,6 @@ class _HomeScreenState extends State<HomeScreen> {
     _scrollController.addListener(
       () {
         if (_scrollController.position.pixels >= _scrollController.position.maxScrollExtent && !loading && !allLoaded) {
-          print('new items are loaded');
           fetchPost();
         }
       },
@@ -47,7 +47,6 @@ class _HomeScreenState extends State<HomeScreen> {
     List<PostModel> sourcePosts = context.read<MainProvider>().posts;
     if (sourcePosts.isEmpty) {
       String response = await context.read<MainProvider>().getPosts();
-      print(response);
       if (response != '0') {
         showSnackBarMessage(response);
         setState(() {
@@ -57,7 +56,6 @@ class _HomeScreenState extends State<HomeScreen> {
       } else {
         sourcePosts = context.read<MainProvider>().posts;
       }
-      print('source posts: ${sourcePosts.length}');
     }
     if (posts.length == sourcePosts.length) {
       setState(() {
@@ -85,7 +83,6 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       loading = false;
     });
-    print('posts: ${posts.length}');
   }
 
   @override
