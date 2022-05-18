@@ -122,10 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (context, index) {
                       return PostWidget(
                         post: posts[index],
-                        onPress: () {
-                          // TODO : REDIRECT TO POST PAGE
-                          //Navigator.push(context, MaterialPageRoute(builder: (context) => const PostPage());
-                        },
+                        onPress: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PostScreen(post: posts[index]),
+                          ),
+                        ),
                       );
                     },
                   ),
